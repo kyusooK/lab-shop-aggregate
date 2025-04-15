@@ -26,28 +26,28 @@
                     OrderItems List
                 </v-card-sub-title>
                 <li v-for="(id, index) in value.orderItems" :key="index">
-                    {{ id && id. ? id.productName : '' }}
+                    {{ id && id.productName ? id.productName : '' }}
                 </li>
             </v-card>
         </div>
-        <OrderStatus
+        <InventoryId
             offline
-            label="OrderStatus"
-            v-model="value.orderStatus"
+            label="inventoryId"
+            v-model="value.inventoryId"
             :editMode="editMode"
             @change="change"
         />
         <Address
             offline
-            label="address"
+            label="Address"
             v-model="value.address"
             :editMode="editMode"
             @change="change"
         />
-        <InventoryId
+        <OrderStatus
             offline
-            label="inventoryId"
-            v-model="value.inventoryId"
+            label="OrderStatus"
+            v-model="value.orderStatus"
             :editMode="editMode"
             @change="change"
         />

@@ -25,17 +25,17 @@ public class Order {
 
     private Integer qty;
 
-    @Enumerated(EnumType.STRING)
-    private OrderStatus orderStatus;
+    @Embedded
+    private InventoryId inventoryId;
 
     @Embedded
     private Address address;
 
-    @Embedded
-    private InventoryId inventoryId;
-
     @ElementCollection
     private List<OrderItem> orderItems;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus;
 
     @PostPersist
     public void onPostPersist() {
